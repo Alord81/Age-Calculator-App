@@ -1,0 +1,163 @@
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Off-white);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .box {
+    background-color: var(--White);
+    width: 34%;
+    padding: 45px;
+    border-radius: 10px 10px 100px 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+@media (max-width:500px) {
+    main .box {
+        width: 92%;
+        padding: 55px 20px;
+    }
+}
+main .box .inputs {
+    display: flex;
+    gap: 30px;
+}
+@media (max-width:500px) {
+    main .box .inputs {
+        margin-bottom: 30px;
+        gap: 15px;
+    }
+}
+main .box .inputs div {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 4px;
+}
+@media (max-width:500px) {
+    main .box .inputs div {
+        width: 100%;
+    }
+}
+main .box .inputs div > span {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--Smokey-grey);
+    letter-spacing: 2px;
+}
+main .box .inputs div.error > span {
+    color: var(--Light-red);
+}
+main .box .inputs div > span:last-child {
+    height: 10px;
+}
+main .box .inputs div.error > span:last-child {
+    color: var(--Light-red);
+    font-size: 9px;
+    letter-spacing: 0;
+    word-spacing: 2px;
+    text-transform: none;
+}
+main .box div > input {
+    padding: 7px;
+    padding-left: 20px;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid var(--Light-grey);
+    font-size: 22px;
+    font-weight: bold;
+    outline: none;
+}
+main .box div.error input {
+    border: 1px solid var(--Light-red);
+}
+@media (max-width:500px) {
+    main .box input {
+        padding-left: 10px;
+    }
+}
+main .box input:focus {
+    border-color: var(--Purple);
+}
+main .box input::after {
+    content:attr('data-name');
+}
+
+main .box .arro {
+    position: absolute;
+    background-color: var(--Purple);
+    width: 70px;
+    height: 70px;
+    padding: 16px;
+    border-radius: 50px;
+    top: 31%;
+    right: 3%;
+    transform: translateY(-75%);
+    cursor: pointer;
+    transition: .5s;
+}
+@media (max-width:500px) {
+    main .box .arro {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-75%);
+    }
+}
+main .box .arro:hover {
+    background-color: var(--Off-black);
+}
+main .box .arro img {
+    width: 100%;
+    height: 100%;
+}
+
+main .box .outputs {
+    padding-top: 30px;
+    border-top: 1px solid var(--Light-grey);
+}
+@media (max-width:500px) {
+    main .box .outputs {
+        padding-top: 55px;
+    }
+}
+main .box .outputs p{
+    font-size: 75px;
+    font-weight: bold;
+    font-style: italic;
+}
+@media (max-width:500px) {
+    main .box .outputs p{
+        font-size: 50px;
+    }
+}
+main .box .outputs p span{
+    letter-spacing: 10px;
+    color: var(--Purple);
+}
